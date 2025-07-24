@@ -104,7 +104,7 @@
           float displacement = snoise(pos * 2.0 + uTime * 0.1) * 0.2;
           pos += normal * displacement;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-          gl_PointSize = 3.0;
+          gl_PointSize = 1.0;
         }
       `,
       fragmentShader: `
