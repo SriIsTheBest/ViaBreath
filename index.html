@@ -21,7 +21,7 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
-    const geometry = new THREE.SphereGeometry(1, 128, 128);
+    const geometry = new THREE.SphereGeometry(1, 180, 180);
 
     const uniforms = {
       uTime: { value: 0.0 }
@@ -104,7 +104,7 @@
           float displacement = snoise(pos * 2.0 + uTime * 0.1) * 0.2;
           pos += normal * displacement;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-          gl_PointSize = 1.0;
+          gl_PointSize = 3.0;
         }
       `,
       fragmentShader: `
